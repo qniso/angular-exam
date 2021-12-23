@@ -7,7 +7,7 @@
     <mat-card>
         <div class="todo-list">
             <div *ngFor="let item of ToDoList">
-                <div class="todo-card">
+                <div class="todo-card" #card>
                     <mat-card (click)="changeCard(item)">
                         <p>What todo: {{item.name}}</p>
                         <p>Todo date: {{item.date}}</p>

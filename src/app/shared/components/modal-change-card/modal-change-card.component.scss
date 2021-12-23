@@ -12,3 +12,12 @@ mat-card {
         margin-bottom: 1rem;
     }
 }
+
+.change-btn {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    float: right;
+    button:nth-child(1) {
+        margin-right: 1rem;
+    }
+}

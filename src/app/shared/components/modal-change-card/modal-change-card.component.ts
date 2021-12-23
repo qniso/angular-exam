@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, } from '@angular/core';
 
 import { Priority } from '../../interfaces/priority.interface';
 import { TODOLISTS } from '../../mocks/mock-todos';
@@ -15,6 +15,7 @@ export class ModalChangeCardComponent implements OnInit {
 
   ToDoList = TODOLISTS;
 
+
   @Input() todocard!: TodoList;
   
   @Input() priority: Priority[] = [
@@ -22,6 +23,9 @@ export class ModalChangeCardComponent implements OnInit {
     {priority: 'Medium'},
     {priority: 'Low'}
   ]
+
+ 
+
   constructor(
 
   ) { }
@@ -30,9 +34,14 @@ export class ModalChangeCardComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
     // console.log(this.ToDoList);
     
   }
 
-
+  delete(card: TodoList){
+    this.todocard = card
+    console.log(this.todocard);
+    
+  }
 }

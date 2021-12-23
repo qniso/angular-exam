@@ -1,4 +1,4 @@
-<div *ngIf="todocard" class="change-card">
+<div *ngIf="todocard" class="change-card" #card>
     <div>
         <mat-form-field appearance="outline">
             <mat-label>Change todo</mat-label>
@@ -27,6 +27,10 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
+        <div class="change-btn">
+            <button mat-raised-button color="warn" (click)="delete(todocard)">Delete</button>
+        </div>
     </div>
+
 
 </div>

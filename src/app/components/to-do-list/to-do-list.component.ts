@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 
 import { TodoList } from '../../shared/mocks/todos';
 import { TODOLISTS } from '../../shared/mocks/mock-todos';
@@ -12,7 +12,10 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
-export class ToDoListComponent implements OnInit, OnChanges {
+export class ToDoListComponent implements OnInit {
+
+  @ViewChild('card') private cardElement!: ElementRef;
+
 
   ToDoList = TODOLISTS;
   
@@ -22,10 +25,7 @@ export class ToDoListComponent implements OnInit, OnChanges {
     public userCardModalDialog : UserCardModalDialog,
     public dialog: MatDialog,
   ) { }
-  ngOnChanges(): void{
-    console.log(this.ToDoList);
-    
-  }
+
   ngOnInit(): void {
     this.openAddDialog()
   }
@@ -35,7 +35,13 @@ export class ToDoListComponent implements OnInit, OnChanges {
   }
   changeCard(card: TodoList){
     this.selectedCard = card;
-    // const dialogOpen = this.changeCardModalDialog.openDialog().subscribe()
+    console.log(this.ToDoList);
+  }
+  //при нажатии по карточке появляется кнопка нужно добавить 
+  delete(card: TodoList){
+    this.selectedCard = card;
+    console.log(this.selectedCard);
+    this.cardElement.nativeElement.remove();
   }
   
 }
