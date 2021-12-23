@@ -38,7 +38,7 @@ export class UserCardModalDialog {
   styleUrls: ['./modal-create-card.component.scss'],
 })
 export class ModalTodoCardComponent implements OnInit {
-
+  
   @Input() priority: Priority[] = [
     {priority: 'High'},
     {priority: 'Medium'},
@@ -48,8 +48,11 @@ export class ModalTodoCardComponent implements OnInit {
 
   ToDoList = TODOLISTS;
 
+
   toDoCard!: FormGroup;
-  dataPicker: any;
+
+
+
 
   constructor(
     public diaologRef: MatDialogRef<ModalTodoCardComponent>,
@@ -71,7 +74,8 @@ export class ModalTodoCardComponent implements OnInit {
   }
 
   testFunc() {
-    let b = {
+     
+      let b = {
       name: this.toDoCard.controls['name'].value,
       date: this.toDoCard.controls['date'].value,
       details: this.toDoCard.controls['description'].value,
@@ -84,11 +88,7 @@ export class ModalTodoCardComponent implements OnInit {
   submit() {
     this.testFunc();
     this.diaologRef.close();
-    // this.sendCardDetails();
+    // console.log(this.ToDoList);
   }
-  // sendCardDetails(){
-  //   console.log(this.toDoCard.controls['name'].value);
-  //   console.log(this.toDoCard.controls['date'].value);
-  //   console.log(this.toDoCard.controls['priority'].value);
-  // }
+
 }

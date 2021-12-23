@@ -8,7 +8,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
-import { MatDialogModule } from "@angular/material/dialog";
+import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
@@ -24,7 +24,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalTodoCardComponent, UserCardModalDialog } from './shared/components/modal-create-card/modal-create-card.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ChangeCardModalDialog, ModalChangeCardComponent } from './shared/components/modal-change-card/modal-change-card.component';
+import {ModalChangeCardComponent } from './shared/components/modal-change-card/modal-change-card.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { ChangeCardModalDialog, ModalChangeCardComponent } from './shared/compon
     MatNativeDateModule,
     MatSelectModule
   ],
-  providers: [UserCardModalDialog,  MatDatepickerModule, ChangeCardModalDialog],
+  providers: [UserCardModalDialog,  MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

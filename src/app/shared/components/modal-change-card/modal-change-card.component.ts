@@ -1,29 +1,8 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
+import { Component, Injectable, Input, OnInit, OnChanges } from '@angular/core';
 
-
-@Injectable()
-export class ChangeCardModalDialog {
-  
-
-  constructor(private dialog: MatDialog) {}
-
-  openDialog(): Observable<any> {
-    const dialogRef = this.dialog.open(ModalChangeCardComponent, {
-      disableClose: true,
-      hasBackdrop: true,
-      minHeight: 'px',
-      width: '700px',
-    });
-
-    return dialogRef.afterClosed();
-  }
-
-  closeDialog() {
-    this.dialog.closeAll();
-  }
-}
+import { Priority } from '../../interfaces/priority.interface';
+import { TODOLISTS } from '../../mocks/mock-todos';
+import { TodoList } from '../../mocks/todos';
 
 @Component({
   selector: 'app-modal-change-card',
@@ -34,9 +13,26 @@ export class ChangeCardModalDialog {
 
 export class ModalChangeCardComponent implements OnInit {
 
-  constructor() { }
+  ToDoList = TODOLISTS;
+
+  @Input() todocard!: TodoList;
+  
+  @Input() priority: Priority[] = [
+    {priority: 'High'},
+    {priority: 'Medium'},
+    {priority: 'Low'}
+  ]
+  constructor(
+
+  ) { }
+  
+  
 
   ngOnInit(): void {
+
+    // console.log(this.ToDoList);
+    
   }
+
 
 }
