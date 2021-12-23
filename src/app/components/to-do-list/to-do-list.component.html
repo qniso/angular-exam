@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="todo-header">
+        <h2>My todo's</h2>
+        <button mat-raised-button color="primary" (click)="openAddDialog()">Add todo</button>
+    </div>
+
+    <mat-card>
+        <div class="todo-list">
+            <div *ngFor="let item of ToDoList">
+                <div class="todo-card">
+                    <mat-card (click)="changeCard()">
+                        <p>What todo: {{item.name}}</p>
+                        <p>Todo date: {{item.date}}</p>
+                        <p>Todo description: {{item.details}}</p>
+                        <p>Tag: {{item.tegs}}</p>
+                        <p>Priority: {{item.priority}}</p>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
