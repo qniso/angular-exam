@@ -35,13 +35,20 @@ export class ToDoListComponent implements OnInit {
   }
   changeCard(card: TodoList){
     this.selectedCard = card;
-    console.log(this.ToDoList);
+    console.log(this.selectedCard);
+    // console.log(`this.selectedCard = ${this.selectedCard}`);
+
   }
   //при нажатии по карточке появляется кнопка нужно добавить 
-  delete(card: TodoList){
-    this.selectedCard = card;
-    console.log(this.selectedCard);
-    this.cardElement.nativeElement.remove();
+  delete(index:number){
+    let arr =  this.ToDoList;
+    console.log(index);
+    console.log( this.ToDoList);
+    arr.splice(index, 1)
+    // if(index> -1){
+      
+    // }
+
   }
   
 }

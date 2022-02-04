@@ -12,8 +12,6 @@ import { Priority } from '../../interfaces/priority.interface';
 
 @Injectable()
 export class UserCardModalDialog {
-  
-
   constructor(private dialog: MatDialog) {}
 
   openDialog(): Observable<any> {
@@ -38,21 +36,15 @@ export class UserCardModalDialog {
   styleUrls: ['./modal-create-card.component.scss'],
 })
 export class ModalTodoCardComponent implements OnInit {
-  
   @Input() priority: Priority[] = [
-    {priority: 'High'},
-    {priority: 'Medium'},
-    {priority: 'Low'}
-  ]
-
+    { priority: 'High' },
+    { priority: 'Medium' },
+    { priority: 'Low' },
+  ];
 
   ToDoList = TODOLISTS;
 
-
   toDoCard!: FormGroup;
-
-
-
 
   constructor(
     public diaologRef: MatDialogRef<ModalTodoCardComponent>,
@@ -74,8 +66,7 @@ export class ModalTodoCardComponent implements OnInit {
   }
 
   testFunc() {
-     
-      let b = {
+    let b = {
       name: this.toDoCard.controls['name'].value,
       date: this.toDoCard.controls['date'].value,
       details: this.toDoCard.controls['description'].value,
@@ -90,5 +81,4 @@ export class ModalTodoCardComponent implements OnInit {
     this.diaologRef.close();
     // console.log(this.ToDoList);
   }
-
 }

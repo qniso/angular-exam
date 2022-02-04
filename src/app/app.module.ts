@@ -17,7 +17,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
-import { CarCatalogComponent } from './components/car-catalog/car-catalog.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
@@ -30,7 +29,6 @@ import {ModalChangeCardComponent } from './shared/components/modal-change-card/m
   declarations: [
     AppComponent,
     ToDoListComponent,
-    CarCatalogComponent,
     MainPageComponent,
     NavbarComponent,
     ModalTodoCardComponent,
